@@ -15,6 +15,7 @@ const Header = () => {
     const tRef = useRef(null);
     const cRef = useRef(null);
     const wRef = useRef(null);
+    const gRef = useRef(null);
     useEffect(() => {
         var box = null;
         switch (location.pathname) {
@@ -35,6 +36,9 @@ const Header = () => {
                 break;
             case '/contact-me':
                 box = cRef.current.getBoundingClientRect();
+                break;
+            case '/game':
+                box = gRef.current.getBoundingClientRect();
                 break;
         }
         if (box) {
@@ -66,6 +70,7 @@ const Header = () => {
     useEffect(() => {
         function handleResize() {
             var box = null;
+            console.log(location.pathname);
             switch (location.pathname) {
                 case '/':
                     box = hRef.current.getBoundingClientRect();
@@ -79,8 +84,14 @@ const Header = () => {
                 case '/testimonials':
                     box = tRef.current.getBoundingClientRect();
                     break;
+                case '/work-history':
+                    box = wRef.current.getBoundingClientRect();
+                    break;
                 case '/contact-me':
                     box = cRef.current.getBoundingClientRect();
+                    break;
+                case '/game':
+                    box = gRef.current.getBoundingClientRect();
                     break;
             }
             if (box) {
@@ -96,15 +107,19 @@ const Header = () => {
         }
         window.addEventListener("resize", handleResize);
         handleResize();
-        document.addEventListener('click', (e) => {
+        const mobileNavOpen = (e) => {
             if ((e.target.tagName != 'NAV' /*&& e.target.parentElement.tagName != 'NAV'*/ ) && noRef.current == 2) {
                 setNavOpen(false);
             } else if (noRef.current == 1) {
                 noRef.current = 2;
             }
-        });
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+        }
+        document.addEventListener('click', mobileNavOpen);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            document.removeEventListener("click", mobileNavOpen);
+        }
+    }, [location.pathname]);
     const noRef = useRef(false);
     const [navOpen, setNavOpen] = useState(false);
     useEffect(() => {
@@ -130,6 +145,7 @@ const Header = () => {
                     <Link ref={pRef} to="/projects" className={location.pathname == '/projects' ? 'current' : null}>Projects</Link>
                     <Link ref={tRef} to="/testimonials" className={location.pathname == '/testimonials' ? 'current' : null}>Testimonials</Link>
                     <Link ref={wRef} to="/work-history" className={location.pathname == '/work-history' ? 'current' : null}>Work History</Link>
+                    <Link ref={gRef} to="/game" className={location.pathname == '/game' ? 'current' : null}>Game</Link>
                     <Link ref={cRef} to="/contact-me" className={location.pathname == '/contact-me' ? 'current' : null}>Contact Me</Link>
                 </nav>
             </div>

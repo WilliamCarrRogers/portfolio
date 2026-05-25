@@ -70,6 +70,61 @@ const Testimonials = () => {
                     </q>
                     <div className="quote-attr">Eric</div>
                 </Col>
+
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        He took over an urgent project with 5,000–6,000
+                        lines of messy code and fully fixed it in just 6–7 days.
+                        He restructured the entire codebase, delivered a clear
+                        and reliable solution, and got everything working properly.
+                        Communication was excellent with near-instant replies.
+                        Fast, highly skilled, and dependable strongly recommended.
+                    </q>
+                    <div className="quote-attr">Idri</div>
+                </Col>
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        William quickly and efficiently completed the project,
+                        seeking feedback and responding to requests while
+                        implementing the project.
+                    </q>
+                    <div className="quote-attr">Amy</div>
+                </Col>
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        I loved William's talent and expertise when it came to my project.
+                        He is quick to reply, complete work assigned,
+                        and is able to adapt to the requests I made for specific coding.
+                        I recommend hiring this talent for your coding needs!
+                        Trustworthy and dependable.
+                    </q>
+                    <div className="quote-attr">Rachael</div>
+                </Col>
+
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        Worked until the job is done thank you so much for everything!
+                    </q>
+                    <div className="quote-attr">Jenny</div>
+                </Col>
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        Great programmer, highly recommended.
+                    </q>
+                    <div className="quote-attr">Isaac</div>
+                </Col>
+                <Col size="4">
+                    <Stars rating="5" />
+                    <q>
+                        Very helpful and quick to complete tasks. Thank you.
+                    </q>
+                    <div className="quote-attr">Riley</div>
+                </Col>
             </Container>
             <ContactSection img={{ src: 'slideshow/will-rogers.webp', alt: 'Laptop with a website' }} >
                 Do you want to be the next satisfied customer? Contact me for your web development project.

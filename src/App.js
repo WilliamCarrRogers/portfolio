@@ -10,6 +10,7 @@ import Testimonials from './pages/testimonials.js'
 import WorkHistory from './pages/work-history.js'
 import Contact from './pages/contact.js'
 import Secret from './pages/secret.js'
+import GamePage from './pages/game.js'
 import Error from './pages/404.js'
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
                     <Route path="/testimonials" element={<Testimonials />} />
                     <Route path="/work-history" element={<WorkHistory />} />
                     <Route path="/contact-me" element={<Contact />} />
+                    <Route path="/game" element={<GamePage />} />
                     <Route path={_p} element={<Secret />} />
                     <Route path="/*" element={<Error />} />
                 </Routes>
